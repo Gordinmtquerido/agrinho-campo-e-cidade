@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo & Cidade: Diálogo Visual</title>
+    <style>
+        /* RESET E FONTES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&family=Patrick+Hand&display=swap');
+        
+        /* VARIÁVEIS DE COR */
+        :root {
+            --cor-cidade: #3a4e7a;
+            --cor-campo: #5a8f3d;
+            --fonte-urbana: 'Urbanist', sans-serif;
+            --fonte-rural: 'Patrick Hand', cursive;
+        }
+        
+        body {
+            overflow-x: hidden;
+            background-color: #f5f5f5;
+        }
+        
+        /* CABEÇALHO ORIGINAL */
+        header {
+            background: linear-gradient(90deg, var(--cor-cidade) 0%, var(--cor-campo) 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-family: var(--fonte-urbana);
+            position: relative;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: pulse 3s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* SEÇÃO INTERATIVA - DUALIDADE */
+        .dualidade {
+            display: flex;
+            min-height: 70vh;
+        }
+        
+        .metade {
+            width: 50%;
+            padding: 2rem;
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        #cidade {
+            background-color: var(--cor-cidade);
+            color: white;
+            font-family: var(--fonte-urbana);
+            align-items: flex-end;
+            text-align: right;
+        }
+        
+        #campo {
+            background-color: var(--cor-campo);
+            color: #fff8e1;
+            font-family: var(--fonte-rural);
+            align-items: flex-start;
+            text-align: left;
+        }
+        
+        .metade h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px dashed currentColor;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .metade p {
+            max-width: 80%;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* IMAGENS PERSONALIZADAS */
+        .img-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin: 1rem 0;
+        }
+        
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .img-container:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* ANIMAÇÃO DE TRANSFORMAÇÃO */
+        .transformar {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            color: var(--cor-cidade);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-family: var(--fonte-urbana);
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .transformar:hover {
+            background: var(--cor-campo);
+            color: white;
+        }
+        
+        /* FOOTER COM CRÉDITOS */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-family: var(--fonte-urbana);
+            font-size: 0.9rem;
+        }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .dualidade {
+                flex-direction: column;
+            }
+            
+            .metade {
+                width: 100%;
+                align-items: center !important;
+                text-align: center !important;
+            }
+            
+            .metade p {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Campo & Cidade</h1>
+        <p>Um diálogo visual sobre dois mundos que se complementam</p>
+    </header>
+    
+    <main>
+        <section class="dualidade">
+            <div id="cidade" class="metade">
+                <h2>Vida Urbana</h2>
+                <p>Na cidade, os prédios tocam o céu e as luzes nunca se apagam. Tudo acontece rápido - pessoas, carros, informações. Cada esquina tem uma história diferente.</p>
+                
+                <div class="img-container">
+                    <!-- Imagem de exemplo - substitua por uma sua ou de banco livre -->
+                    <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cidade movimentada">
+                </div>
+                
+                <p>Mas entre o concreto, surgem jardins verticais e praças que tentam trazer um pouco de natureza para o cotidiano.</p>
+            </div>
+            
+            <div id="campo" class="metade">
+                <h2>Vida Rural</h2>
+                <p>No campo, o dia começa com o canto dos galos e termina com o pôr-do-sol. O tempo parece passar mais devagar, marcado pelas estações e colheitas.</p>
+                
+                <div class="img-container">
+                    <!-- Imagem de exemplo - substitua por uma sua ou de banco livre -->
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Campo tranquilo">
+                </div>
+                
+                <p>A tecnologia chega suave, misturando tradição e inovação. O wi-fi pode ser fraco, mas a conexão com a terra é forte.</p>
+            </div>
+        </section>
+        
+        <button class="transformar" onclick="transformar()">Transformar Realidades</button>
+    </main>
+    
+    <footer>
+        <p>Projeto original criado por [Seu Nome] | Imagens do Unsplash (créditos aos fotógrafos)</p>
+        <p>Fontes: Google Fonts (Urbanist e Patrick Hand)</p>
+    </footer>
+    
+    <script>
+        function transformar() {
+            const cidade = document.getElementById('cidade');
+            const campo = document.getElementById('campo');
+            
+            // Animação de transformação
+            cidade.style.transform = 'translateX(-50%) rotateY(180deg)';
+            campo.style.transform = 'translateX(50%) rotateY(180deg)';
+            
+            // Espera a animação terminar para trocar o conteúdo
+            setTimeout(() => {
+                // Troca temporária dos conteúdos para efeito
+                const tempHTML = cidade.innerHTML;
+                cidade.innerHTML = campo.innerHTML;
+                campo.innerHTML = tempHTML;
+                
+                // Reseta a transformação
+                cidade.style.transform = 'translateX(0) rotateY(0)';
+                campo.style.transform = 'translateX(0) rotateY(0)';
+                
+                // Alerta poético
+                alert("As realidades se misturaram! Será que os opostos têm mais em comum do que imaginamos?");
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
