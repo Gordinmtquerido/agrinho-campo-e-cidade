@@ -1,117 +1,99 @@
-/<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harmonia Urbana & Rural</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Conexão Campo e Cidade</title>
+    <link rel="stylesheet" href=".css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="author" content="Seu Nome">
 </head>
 <body>
-    <div class="parallax-bg"></div>
-    
-    <header>
-        <div class="header-content">
-            <h1><span class="urban">Harmonia</span> <span class="rural">Urbana & Rural</span></h1>
-            <p class="subtitle">Do concreto à natureza: uma jornada visual</p>
-            <div class="scroll-down">
-                <i class="fas fa-chevron-down"></i>
-            </div>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Conexão <span>Campo</span> & <span>Cidade</span></h1>
+            <p>Uma relação essencial para o futuro sustentável</p>
+            <a href="#conexao" class="btn">Explore a Conexão</a>
         </div>
     </header>
-    
-    <main>
-        <section class="comparison-section">
-            <div class="comparison-container">
-                <div class="city-card">
-                    <div class="card-content">
-                        <h2><i class="fas fa-city"></i> Vida Urbana</h2>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-building"></i> Arquitetura moderna</li>
-                            <li><i class="fas fa-wifi"></i> Conectividade total</li>
-                            <li><i class="fas fa-subway"></i> Mobilidade eficiente</li>
-                        </ul>
-                        <div class="image-frame" data-tilt style="background-image: url('cidade.jpg')"></div>
-                        <p class="highlight">"Na cidade que nunca dorme, cada esquina conta uma história de inovação e diversidade."</p>
-                    </div>
+
+    <section class="diferencas">
+        <div class="container">
+            <div class="card cidade">
+                <div class="card-img" style="background-image: url('img/cidade.jpg');"></div>
+                <div class="card-content">
+                    <h2><i class="fas fa-city"></i> Vida Urbana</h2>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Infraestrutura desenvolvida</li>
+                        <li><i class="fas fa-check"></i> Acesso a serviços</li>
+                        <li><i class="fas fa-check"></i> Diversidade cultural</li>
+                    </ul>
                 </div>
-                
-                <div class="divider">
-                    <div class="vs-circle">VS</div>
+            </div>
+
+            <div class="card campo">
+                <div class="card-img" style="background-image: url('img/campo.jpg');"></div>
+                <div class="card-content">
+                    <h2><i class="fas fa-tree"></i> Vida Rural</h2>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Contato com a natureza</li>
+                        <li><i class="fas fa-check"></i> Produção de alimentos</li>
+                        <li><i class="fas fa-check"></i> Qualidade de vida</li>
+                    </ul>
                 </div>
-                
-                <div class="countryside-card">
-                    <div class="card-content">
-                        <h2><i class="fas fa-tree"></i> Vida Rural</h2>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-leaf"></i> Ar puro e natureza</li>
-                            <li><i class="fas fa-wind"></i> Ritmo tranquilo</li>
-                            <li><i class="fas fa-tractor"></i> Conexão com a terra</li>
-                        </ul>
-                        <div class="image-frame" data-tilt style="background-image: url('campo.jpg')"></div>
-                        <p class="highlight">"No campo, o tempo flui com as estações e cada dia traz a promessa de crescimento e renovação."</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="conexao" class="conexao">
+        <div class="container">
+            <h2>A <span>Conexão</span> Essencial</h2>
+            <div class="conexao-content">
+                <div class="conexao-img" style="background-image: url('img/conexao.jpg');"></div>
+                <div class="conexao-text">
+                    <p>O campo e a cidade são interdependentes. Enquanto o campo fornece os alimentos e recursos naturais, a cidade oferece tecnologia, serviços e mercados para esses produtos.</p>
+                    
+                    <div class="beneficios">
+                        <div class="beneficio">
+                            <i class="fas fa-truck"></i>
+                            <h3>Logística</h3>
+                            <p>Transporte eficiente de produtos agrícolas</p>
+                        </div>
+                        <div class="beneficio">
+                            <i class="fas fa-wifi"></i>
+                            <h3>Tecnologia</h3>
+                            <p>Inovações urbanas aplicadas no campo</p>
+                        </div>
+                        <div class="beneficio">
+                            <i class="fas fa-leaf"></i>
+                            <h3>Sustentabilidade</h3>
+                            <p>Práticas rurais sustentáveis nas cidades</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <section class="integration-section">
-            <h2 class="section-title">O Melhor dos Dois Mundos</h2>
-            <div class="integrated-grid">
-                <div class="grid-item">
-                    <i class="fas fa-solar-panel"></i>
-                    <h3>Energia Sustentável</h3>
-                    <p>Tecnologia verde unindo campo e cidade</p>
-                </div>
-                <div class="grid-item">
-                    <i class="fas fa-seedling"></i>
-                    <h3>Agricultura Urbana</h3>
-                    <p>Hortas comunitárias em centros urbanos</p>
-                </div>
-                <div class="grid-item">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Tecnologia Rural</h3>
-                    <p>Inovação digital no campo</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Juntos somos mais fortes</h2>
+            <p>A integração entre campo e cidade é fundamental para um futuro sustentável e próspero.</p>
+            <a href="#" class="btn">Saiba Mais</a>
+        </div>
+    </section>
+
     <footer>
-        <div class="footer-content">
-            <div class="social-links">
+        <div class="container">
+            <p>Projeto desenvolvido para o Agrinho 2024</p>
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
             </div>
-            <p>© 2024 Harmonia Urbana & Rural | Projeto Agrinho</p>
-            <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <i class="fas fa-arrow-up"></i> Voltar ao Topo
-            </button>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-    <script>
-        // Inicializa o efeito de inclinação nas imagens
-        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
-            max: 15,
-            speed: 400,
-            glare: true,
-            "max-glare": 0.2,
-        });
-        
-        // Efeito de rolagem suave
-        document.querySelector('.scroll-down').addEventListener('click', () => {
-            document.querySelector('.comparison-section').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
-        });
-        
-        // Atualiza o ano do copyright automaticamente
-        document.querySelector('footer p').innerHTML = `© ${new Date().getFullYear()} Harmonia Urbana & Rural | Projeto Agrinho`;
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
