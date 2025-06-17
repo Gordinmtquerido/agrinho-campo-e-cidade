@@ -1,0 +1,42 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.cabecalho{
+    color: #008000;
+    background-color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+.cabecalho h3{
+    color: green;
+}
+
+p .alinha{
+    text-align: right;
+}
+.img-agro{
+    width: 300px;
+}
+
+.br-3{
+    border-radius: 15px;
+}
+
+.img-card{
+    max-height: 250px;
+}
+
+.img-slide{
+    max-height: 400px;
+}
+
+.footer{
+    background-color: green;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
