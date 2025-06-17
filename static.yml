@@ -1,0 +1,81 @@
+name: Publicar Site Estático no GitHub Pages
+
+on:
+  # Executa quando há pushes na branch principal
+  push:
+    branches: ["main"]
+    paths:
+      - '**.html'
+      - '**.css'
+      - '**.js'
+      - '**.png'
+      - '**.jpg'
+      - '**.gif'
+  
+  # Permite execução manual
+  workflow_dispatch:
+
+# Configuração de concorrência
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+# Permissões necessárias
+permissions:
+  contents: read   # Ler o conteúdo do repositório
+  pages: write     # Escrever nas Pages
+  id-token: write  # Gerar tokens de identificação
+
+jobs:
+  deploy:
+    name: Publicar no GitHub Pages
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      # Passo 1: Baixar o código do repositório
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Baixa todo o histórico para deploy completo
+
+      # Passo 2: Validar HTML (opcional)
+      - name: Validar HTML
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { execSync } = require('child_process')
+            try {
+              execSync('find . -name "*.html" -print0 | xargs -0 -n1 tidy -q -e')
+              console.log('Validação HTML bem-sucedida')
+            } catch (error) {
+              console.error('Erro na validação HTML:', error.stdout.toString())
+              process.exit(1)
+            }
+
+      # Passo 3: Configurar GitHub Pages
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+        with:
+          static_site_generator: "custom"  # Site estático personalizado
+          
+      # Passo 4: Preparar artefato para deploy
+      - name: Preparar artefato
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'  # Usa todo o diretório
+
+      # Passo 5: Fazer o deploy
+      - name: Publicar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Passo 6: Verificar se o site está online
+      - name: Verificar publicação
+        run: |
+          echo "Site publicado com sucesso: ${{ steps.deployment.outputs.page_url }}"
+          curl -sSf ${{ steps.deployment.outputs.page_url }} > /dev/null || exit 1
