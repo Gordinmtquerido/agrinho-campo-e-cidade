@@ -1,0 +1,130 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.cabecalho {
+    color: #ffffff;
+    background: linear-gradient(to right, #000000, #000000, rgb(0, 0, 0),#000000, #000000,#000000,#000000, #ffea00);
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.imgf {
+    width: 100px;
+}
+
+
+
+.cabecalho h1 {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.cabecalho h3 {
+    color: #d6b006;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    padding: 20px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #eecf05;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: rgb(0, 0, 0) !important;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: rgb(235, 235, 10) !important;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-item.active .nav-link {
+    color: #ceba08 !important;
+    font-weight: 600;
+}
+
+.navbar-toggler-icon {
+    background-color: white;
+}
+
+/* Para dispositivos móveis */
+@media (max-width: 768px) {
+    .navbar-nav .nav-item .nav-link {
+        font-size: 16px;
+    }
+}
+
+ .imgf1 {
+      width: 100px;
+      margin: 20px 0;
+    }
+
+     .imgf4 {
+      width: 80px;
+      margin: 20px 0;
+    }
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #eee5ae;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+    footer {
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.corzinhaamarela {
+      text-align: center;
+  background-color: #fae76a;
+  color: #000000;
+}
+
+  .text-justificado {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.8;
+  }
+
+  .text-justificado {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.8;
+    margin-bottom: 1.8rem; /* mais espaçamento entre parágrafos */
+  }
+  .energia-col h5 {
+    margin-bottom: 1.5rem; /* mais espaço entre título e texto */
+  }
+  .energia-col {
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 400px;
+  }
+  .energia-col img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  margin-top: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+ 
